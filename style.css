@@ -1,0 +1,24 @@
+a{
+    text-decoration: wavy;
+}
+body{
+   background:pink;
+    color:green;
+}
+h1{
+    color:purple;
+    font-style: italic;
+    text-align: center;
+}
+#Nhom1{
+    text-align: center;
+    color: aqua;
+}
+#Nhom2{
+    text-align: center;
+    color:blueviolet;
+}
+.Nhom{
+    text-decoration: solid;
+    color: red;
+}
