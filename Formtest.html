@@ -7,14 +7,39 @@
     </head>
 
     <body>
-
+        <h1>Form Đăng Nhập</h1>
+        <div class="border">
         <form>
-            <h1>Form Đăng Nhập</h1>
-            <label>Tên đăng nhập</label><br>
-            <input type="text" id="user"><br><br>
-            <label>Mật khẩu</label><br>
-            <input type="password" id="pass">
+            <p>
+                <input type="text" id="exname" placeholder="Ten dem">
+                <input type="text" id="user" placeholder="Ten"><br>
+                <input type="text" id="email" placeholder="Nhap email">
+                <input type="number" id="sdt" placeholder="Nhap so dien thoai"><br>
+                <input type="password" id="pass" placeholder="Password"><br>
+            </p>
+            <select>
+                <p>
+                    <option value="1">Chon thanh pho</option>
+                    <option value="2">Ha Noi</option>
+                    <option value="3">Vinh Phuc</option>
+                    <option value="4">Nam Dinh</option>
+                    <option value="5">Ninh Binh</option>
+                </p>
+            </select>
+            <select>
+                <p>
+                    <option value="1">Chon tinh</option>
+                    <option value="2">Ha Dong</option>
+                    <option value="3">Ha Tay</option>
+                    <option value="4">Ha Nam</option>
+                    <option value="5">Yen Phu</option>
+                </p>
+            </select>
+            <p>
+                <textarea placeholder="Ghi chu"></textarea><br>
+            </p>
+            <button type="submit">Sign in</button>
         </form>
-
+    </div>
     </body>
 </html>

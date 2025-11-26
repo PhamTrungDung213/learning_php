@@ -15,3 +15,45 @@ label{
     color:greenyellow;
     
 }
+form{
+    text-align: center;
+}
+input[type="text"],input[type="number"]{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 200px;
+}
+input[type="password"]{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 400px;
+}
+select{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 200px;
+}
+textarea{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 400px;
+}
+button{
+    border-radius: 5px;
+    color:greenyellow;
+    background-color: gold;
+}
+.border{
+    width: 60%;
+    margin: 20px auto;               /* căn giữa */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3); /* nền mờ */
+    border: 1px solid #ffffff;       /* màu viền */
+    border-radius: 15px;             /* bo góc */
+    backdrop-filter: blur(10px);     /* hiệu ứng mờ */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* đổ bóng */
+}
