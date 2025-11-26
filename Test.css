@@ -1,0 +1,9 @@
+div{
+    background-color: rbga(70,89,80,0.3);
+}
+div.f{
+    opacity: 0.1;
+}
+div.s{
+    opacity: 0.3;
+}
