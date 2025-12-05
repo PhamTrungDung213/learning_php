@@ -1,4 +1,4 @@
-let func1=()=>{//
+let func1=()=>{
     var ds=["Dung","Anh","Mau","Long","Toan"]
 
     for(var i=0;i<ds.length;i++){
