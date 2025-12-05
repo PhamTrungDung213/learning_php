@@ -12,9 +12,20 @@ h1{
     color: chartreuse;
     margin-bottom: 50px;
 }
-label{
-    color:blueviolet; 
-    
+label[id="lb"]{
+    text-align: center;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+label[id="tb"]{
+    text-align: center;
+    margin-bottom: 5px;
+    text-decoration:underline;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: chartreuse;
 }
 input[type="text"],input[type="number"]{
     border-radius: 5px;
@@ -42,9 +53,10 @@ textarea{
 }
 button{
     border-radius: 5px;
-    color:greenyellow;
+    color:red;
     background-color: gold;
     padding: 7px 20px;
+    margin-bottom: 10px;
 }
 form{
     text-align: center;
