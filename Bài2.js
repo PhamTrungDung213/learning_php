@@ -1,4 +1,4 @@
-let functt=()=>{
+let functt=()=>{//
     document.getElementById("MyForm").addEventListener("submit",function(event){
         event.preventDefault();
         let lb=document.getElementById("tb");
