@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng hợp 4 Ví dụ JavaScript DOM và Validation</title>
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background-color: #f4f4f4;
+        }
+        
+        /* CSS 1: VÍ DỤ LOGIN/VALIDATION */
+        .login-form { 
+            max-width: 350px; 
+            margin: 20px auto; 
+            padding: 30px; 
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .login-form input { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 8px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            box-sizing: border-box;
+        }
+        .login-form button { 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 15px; 
+        }
+        #message { 
+            margin-top: 15px; 
+            padding: 10px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            text-align: center; 
+        }
+        .error { color: red; background-color: #ffe8e8; }
+        .success { color: green; background-color: #e8ffe8; }
+
+        /* CSS 2: VÍ DỤ DOM & STYLE */
+        #text {
+            color: blue;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .highlight { 
+            color: red; 
+            font-weight: bold; 
+        }
+        
+        /* CSS 3: VÍ DỤ THAY THẾ PHẦN TỬ */
+        #img-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #image {
+            width: 200px;
+            height: auto;
+            border: 2px solid #333;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        /* Style cho đoạn văn bản thay thế */
+        .replaced-text {
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 2px dashed #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tổng Hợp Các Bài Học JavaScript DOM</h1>
+
+    <h2>1. Lấy và Gán Style</h2>
+    <p id="text">Đây là đoạn văn bản có sẵn CSS.</p>
+    <button onclick="getStyle()">Lấy style</button>
+    <button onclick="setStyle()"> Gán style</button>
+    <p id="result">Kết quả Style:</p>
+    
+    <hr>
+    
+    <h2>2. Thao tác DOM cơ bản (Thay đổi nội dung, Class, Thêm phần tử)</h2>
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là đoạn văn có class.</p>
+    <p class="description">Đây là đoạn văn thứ hai có cùng class.</p>
+    <button onclick="changeText()">🔄 Thay đổi nội dung & Class</button>
+    <ul id="list">
+        <li>Phần tử 1</li>
+        <li>Phần tử 2</li>
+        <li>Phần tử 3</li>
+    </ul>
+
+    <hr>
+    
+    <h2>3. Thay thế Phần tử (Replace Child)</h2>
+    <div id="img-container">
+        <img id="image" id="image"
+        src="https://nads.1cdn.vn/2024/11/22/74da3f39-759b-4f08-8850-4c8f2937e81a-1_mangeshdes.png";>
+        <br>
+        <button onclick="replaceElement()">Thay thế hình ảnh</button>
+    </div>
+    
+    <hr>
+
+    <script>
+        
+        // --- CHỨC NĂNG 1: LẤY VÀ GÁN STYLE ---
+        function getStyle() {
+            const textElement = document.getElementById('text');
+            const style = window.getComputedStyle(textElement);
+            const color = style.color;
+            const size = style.fontSize;
+            
+            document.getElementById('result').innerHTML = `Kết quả Style: Màu: <b>${color}</b>, Cỡ chữ: <b>${size}</b>`;
+        }
+
+        function setStyle() {
+            const textElement = document.getElementById('text');
+            textElement.style.color = 'green';
+            textElement.style.backgroundColor = '#f0fff0';
+            textElement.style.border = '2px dashed green';
+            document.getElementById('result').textContent = "Đã gán style mới thành công!";
+        }
+
+        // --- CHỨC NĂNG 2: THAO TÁC DOM CƠ BẢN ---
+        function changeText() {
+            document.getElementById('title').textContent = "Nội dung đã được thay đổi!";
+            
+            const paragraph = document.querySelector('.description');
+            paragraph.className = 'highlight'; 
+            
+            const list = document.getElementById('list');
+            const newLi = document.createElement('li');
+            newLi.textContent = "Phần tử mới được thêm!";
+            list.appendChild(newLi);
+        }
+
+        function replaceElement() {
+        const imageElement = document.getElementById("image");
+
+        // Ảnh mới
+        imageElement.src =
+          "https://img5.thuthuatphanmem.vn/uploads/2021/11/20/anh-cute-nguoi-that-dep-nhat_022606213.jpg";
+        imageElement.alt = "Hình ảnh mới";
+        alert("Đã thay thế hình ảnh !");
+      }
+        
+    </script>
+</body>
+</html>
