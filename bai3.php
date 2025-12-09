@@ -14,7 +14,7 @@
 <body>
     <?php
         for ($i = 1; $i <= 100; $i++) {
-            if($i%2== 0){
+            if($i%2== 0){//so chan
                 echo "<span style='color: red; font-weight: bold; margin-right: 12px;'>" . $i . "</span>";
             }else if($i%2!= 0){
                 echo "<span style='color: green; font-style: Italic; font-weight: bold; margin-right: 12px;'>" . $i . "</span>";
