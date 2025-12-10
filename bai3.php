@@ -19,6 +19,9 @@
             }else if($i%2!= 0){
                 echo "<span style='color: green; font-style: Italic; font-weight: bold; margin-right: 12px;'>" . $i . "</span>";
             }
+            if($i%10==0){
+                echo "<br>";
+            }
         }
     ?>
 </body>
