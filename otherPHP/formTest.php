@@ -6,7 +6,7 @@
     <title>Form Test</title>
 </head>
 <body>
-    <form action="../php/process.php" method="GET">
+    <form action="process.php" method="GET">
         <input type="text" name="search" placeholder="Your name :"><br>
         <button type="submit">Send</button>
     </form>
