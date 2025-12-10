@@ -11,7 +11,7 @@
         <button type="submit">Send</button>
     </form>
     <hr>
-    <form action="../php/process.php" method="POST">
+    <form action="process.php" method="POST">
         <input type="text" name="fullname" placeholder="Your name :"><br>
         <button type="submit">Send</button>
     </form>
