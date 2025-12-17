@@ -4,8 +4,43 @@
         header("Location: sqlCRUD.php");
         exit();
     }
+    $table_name = $_SESSION["tenbang"];
+    $id_val = "";
+    $ht_val = "";
+    $ns_val = "";
+    $sdt_val = "";
 
-    //them:
+    if(isset($_POST["load"])){
+        $id_input = $_POST['id']; // Lấy ID người dùng nhập
+        
+        $sql = "SELECT * FROM $table_name WHERE id = '$id_input'"; 
+        
+        try {
+            $conn = mysqli_connect("localhost", "root", "", "phptest");
+            if (!$conn) { die("Kết nối thất bại: " . mysqli_connect_error()); }
+            mysqli_set_charset($conn, 'utf8');
+
+            $result = mysqli_query($conn, $sql);
+            if($result && mysqli_num_rows($result) > 0){
+                // Lấy dòng dữ liệu ra
+                $row = mysqli_fetch_assoc($result);
+                
+                // Gán vào biến để dùng ở dưới HTML
+                $id_val  = $row['id'];
+                $ht_val  = $row['ht'];
+                $ns_val  = $row['ns'];
+                $sdt_val = $row['sdt'];
+            } else {
+                echo "<script>alert('Không tìm thấy ID này!');</script>";
+            }
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+
+        Mysqli_close($conn);
+    }
+
+    //sua:
     if(isset($_POST["conf"])){
         $table_name=$_SESSION["tenbang"];
         $id  = $_POST['id'];
@@ -57,10 +92,11 @@
     <h2>Update vào bảng sinhvien:</h2>
     <hr>
     <form id="InForm" method="post">
-    <p>ID muốn cập nhật: <input type="text" name="id" placeholder="Student id"></p><hr>
-    <p>Họ Tên: <input type="text" name="ht" placeholder="Student name"></p>
-    <p>Ngày sinh: <input type="date" name="ns" placeholder="Student birth"></p>
-    <p>SDT: <input type="number" name="sdt" placeholder="Student phone number"></p>
+    <p>ID muốn cập nhật: <input type="text" name="id" placeholder="Student id" value="<?php echo $id_val; ?>">
+    <button type="submit" name="load">@</button><hr>
+    <p>Họ Tên: <input type="text" name="ht" placeholder="Student name" value="<?php echo $ht_val; ?>"></p>
+    <p>Ngày sinh: <input type="date" name="ns" placeholder="Student birth" value="<?php echo $ns_val; ?>"></p>
+    <p>SDT: <input type="number" name="sdt" placeholder="Student phone number" value="<?php echo $sdt_val; ?>"></p>
     <hr>
         <button type="submit" name="conf">Confirm</button>
         <button type="submit" name="exit">Exit</button>
